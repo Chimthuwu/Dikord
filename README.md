@@ -13,6 +13,11 @@
 
 <p align="center"><i>10 discord themes. the avatars spin when you hover them in the actual app. that's the whole pitch.</i></p>
 
+<p align="center">
+<img src="assets/spin-demo.gif" width="260">
+</p>
+<p align="center"><sub>real footage. real spinning. real hidden servers.</sub></p>
+
 <br>
 
 <p align="center">
