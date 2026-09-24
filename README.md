@@ -1,31 +1,106 @@
-# DIKORD
+<p align="center">
+  <img src="assets/banner.png" alt="DIKORD" width="100%">
+</p>
 
-A set of Discord (Equicord/Vencord) themes built on the [Midnight](https://github.com/refact0r/midnight-discord) base: flush panels, minimal rounding, gradient channel/server names, spinning avatars, and a small "DIKORD" watermark.
+<p align="center">
+  <a href="https://github.com/Chimthuwu/Dikord/archive/refs/heads/main.zip">
+    <img src="https://img.shields.io/badge/⬇️_DOWNLOAD_ALL_THEMES-7c81f2?style=for-the-badge&labelColor=0a0b14" alt="Download All">
+  </a>
+  <a href="https://vencord.dev/">
+    <img src="https://img.shields.io/badge/runs_on-Vencord-7c81f2?style=for-the-badge&labelColor=0a0b14&logo=discord&logoColor=white" alt="Vencord">
+  </a>
+</p>
 
-## Install
+<p align="center"><i>10 discord themes. the avatars spin when you hover them. that's the whole pitch.</i></p>
 
-Drop the `.theme.css` file(s) you want into your client mod's `themes` folder (e.g. `%APPDATA%\Equicord\themes`) and enable them in Settings → Themes.
+<br>
 
-## Variants
+<table align="center">
+<tr>
 
-| File | Description |
-| --- | --- |
-| `DIKORD.theme.css` | The original - deep navy-black base, blue-purple accent |
-| `DIKORD-Crimson.theme.css` | SATANCORD - dark blood-red base, orange/gold hellfire accent, lava glow |
-| `DIKORD-Emerald.theme.css` | Dark forest-green-black base, emerald/lime accent |
-| `DIKORD-Gold.theme.css` | Dark warm brown-black base, gold/amber accent |
-| `DIKORD-IceBlue.theme.css` | Cold icy dark-blue base, glacial-blue accent |
-| `DIKORD-Sunset.theme.css` | Warm dark red-brown base, coral/orange accent |
-| `DIKORD-Teal-Neon.theme.css` | Dark teal/slate base, neon cyan accent |
-| `DIKORD-Violet.theme.css` | Deep violet-black base, violet/magenta accent |
-| `DIKORD-CatppuccinMocha.theme.css` | Built on the [Catppuccin Mocha](https://catppuccin.com) palette, mauve accent |
-| `DIKORD-CatppuccinMacchiato.theme.css` | Built on the [Catppuccin Macchiato](https://catppuccin.com) palette, mauve accent |
+<td align="center" width="50%">
+<a href="https://raw.githubusercontent.com/Chimthuwu/Dikord/main/DIKORD.theme.css"><img src="assets/dikord.gif" width="380"></a><br>
+<b><a href="https://raw.githubusercontent.com/Chimthuwu/Dikord/main/DIKORD.theme.css">DIKORD</a></b><br>
+<sub>the one that started it all</sub>
+</td>
 
-## Features
+<td align="center" width="50%">
+<a href="https://raw.githubusercontent.com/Chimthuwu/Dikord/main/DIKORD-Crimson.theme.css"><img src="assets/crimson.gif" width="380"></a><br>
+<b><a href="https://raw.githubusercontent.com/Chimthuwu/Dikord/main/DIKORD-Crimson.theme.css">SATANCORD</a></b><br>
+<sub>hell mode. repent later</sub>
+</td>
 
-- Gradient channel, category, DM, and server names on hover
-- Spinning avatars on hover: server icons, DMs, chat messages, member list, and the profile popout
-- Custom home button icon
-- "DIKORD" watermark, top-left corner
+</tr>
+<tr>
 
-All variants share the same Midnight base and feature set - only the color palette changes.
+<td align="center" width="50%">
+<a href="https://raw.githubusercontent.com/Chimthuwu/Dikord/main/DIKORD-Emerald.theme.css"><img src="assets/emerald.gif" width="380"></a><br>
+<b><a href="https://raw.githubusercontent.com/Chimthuwu/Dikord/main/DIKORD-Emerald.theme.css">Emerald</a></b><br>
+<sub>if money had a personality</sub>
+</td>
+
+<td align="center" width="50%">
+<a href="https://raw.githubusercontent.com/Chimthuwu/Dikord/main/DIKORD-Gold.theme.css"><img src="assets/gold.gif" width="380"></a><br>
+<b><a href="https://raw.githubusercontent.com/Chimthuwu/Dikord/main/DIKORD-Gold.theme.css">Gold</a></b><br>
+<sub>bling bling discord</sub>
+</td>
+
+</tr>
+<tr>
+
+<td align="center" width="50%">
+<a href="https://raw.githubusercontent.com/Chimthuwu/Dikord/main/DIKORD-IceBlue.theme.css"><img src="assets/iceblue.gif" width="380"></a><br>
+<b><a href="https://raw.githubusercontent.com/Chimthuwu/Dikord/main/DIKORD-IceBlue.theme.css">Ice Blue</a></b><br>
+<sub>brain freeze aesthetic</sub>
+</td>
+
+<td align="center" width="50%">
+<a href="https://raw.githubusercontent.com/Chimthuwu/Dikord/main/DIKORD-Sunset.theme.css"><img src="assets/sunset.gif" width="380"></a><br>
+<b><a href="https://raw.githubusercontent.com/Chimthuwu/Dikord/main/DIKORD-Sunset.theme.css">Sunset</a></b><br>
+<sub>juice box orange</sub>
+</td>
+
+</tr>
+<tr>
+
+<td align="center" width="50%">
+<a href="https://raw.githubusercontent.com/Chimthuwu/Dikord/main/DIKORD-Teal-Neon.theme.css"><img src="assets/teal-neon.gif" width="380"></a><br>
+<b><a href="https://raw.githubusercontent.com/Chimthuwu/Dikord/main/DIKORD-Teal-Neon.theme.css">Teal Cyan</a></b><br>
+<sub>cyberpunk lite</sub>
+</td>
+
+<td align="center" width="50%">
+<a href="https://raw.githubusercontent.com/Chimthuwu/Dikord/main/DIKORD-Violet.theme.css"><img src="assets/violet.gif" width="380"></a><br>
+<b><a href="https://raw.githubusercontent.com/Chimthuwu/Dikord/main/DIKORD-Violet.theme.css">Violet</a></b><br>
+<sub>grape drank</sub>
+</td>
+
+</tr>
+<tr>
+
+<td align="center" width="50%">
+<a href="https://raw.githubusercontent.com/Chimthuwu/Dikord/main/DIKORD-CatppuccinMocha.theme.css"><img src="assets/catppuccin-mocha.gif" width="380"></a><br>
+<b><a href="https://raw.githubusercontent.com/Chimthuwu/Dikord/main/DIKORD-CatppuccinMocha.theme.css">Catppuccin Mocha</a></b><br>
+<sub>coffee-pilled</sub>
+</td>
+
+<td align="center" width="50%">
+<a href="https://raw.githubusercontent.com/Chimthuwu/Dikord/main/DIKORD-CatppuccinMacchiato.theme.css"><img src="assets/catppuccin-macchiato.gif" width="380"></a><br>
+<b><a href="https://raw.githubusercontent.com/Chimthuwu/Dikord/main/DIKORD-CatppuccinMacchiato.theme.css">Catppuccin Macchiato</a></b><br>
+<sub>coffee-pilled but soft</sub>
+</td>
+
+</tr>
+</table>
+
+<br>
+
+<p align="center">
+  <a href="https://github.com/Chimthuwu/Dikord/archive/refs/heads/main.zip">
+    <img src="https://img.shields.io/badge/⬇️_DOWNLOAD_ALL_THEMES-7c81f2?style=for-the-badge&labelColor=0a0b14" alt="Download All">
+  </a>
+</p>
+
+<p align="center"><sub>click a gif to grab that theme's .css. throw it in your Vencord/Equicord themes folder. flip it on. spin stuff.</sub></p>
+
+<p align="center">🍆💦</p>
