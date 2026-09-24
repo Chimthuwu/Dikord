@@ -95,6 +95,31 @@
 
 <br>
 
+<h3 align="center">not mockups. real discord. real ugly channel names.</h3>
+
+<p align="center"><sub>yes that's a github webhook avatar taking up the whole screen. no we're not cropping it out.</sub></p>
+
+<p align="center">
+<img src="assets/live-dikord.png" width="100%"><br><sub><b>DIKORD</b></sub>
+</p>
+<p align="center">
+<img src="assets/live-crimson.png" width="100%"><br><sub><b>SATANCORD</b></sub>
+</p>
+<p align="center">
+<img src="assets/live-emerald.png" width="100%"><br><sub><b>Emerald</b></sub>
+</p>
+<p align="center">
+<img src="assets/live-iceblue.png" width="100%"><br><sub><b>Ice Blue</b></sub>
+</p>
+<p align="center">
+<img src="assets/live-teal-neon.png" width="100%"><br><sub><b>Teal Cyan</b></sub>
+</p>
+<p align="center">
+<img src="assets/live-violet.png" width="100%"><br><sub><b>Violet</b></sub>
+</p>
+
+<br>
+
 <p align="center">
   <a href="https://github.com/Chimthuwu/Dikord/archive/refs/heads/main.zip">
     <img src="https://img.shields.io/badge/⬇️_DOWNLOAD_ALL_THEMES-7c81f2?style=for-the-badge&labelColor=0a0b14" alt="Download All">
