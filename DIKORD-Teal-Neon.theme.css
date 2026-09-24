@@ -1,0 +1,185 @@
+/**
+ * @name DIKORD Teal Cyan
+ * @author chimi420
+ * @version 1.1.0
+ * @description Variant of DIKORD built around a dark teal/slate base (#2a413f, darkened) with the blue-purple accent swapped for neon cyan. Same Midnight base, same watermark.
+ */
+
+@import url('https://refact0r.github.io/midnight-discord/build/midnight.css');
+
+:root {
+    /* layout: flush panels, minimal rounding, like stock Discord */
+    --gap: 0px;
+    --border-thickness: 1px;
+    --radius-lg: 6px;
+    --radius-md: 4px;
+    --radius-sm: 3px;
+
+    /* backgrounds, darkest -> lightest, built around base colour #2a413f (hsl(175, 21%, 21%)), darkened a bit */
+    --bg-4: hsla(175, 21%, 16%, 1);  /* main background - the base colour, darkened */
+    --bg-3: hsla(175, 21%, 20%, 1);  /* secondary elements / sidebar */
+    --bg-2: hsla(175, 21%, 24%, 1);  /* buttons */
+    --bg-1: hsla(175, 21%, 29%, 1);  /* buttons clicked */
+    --hover: hsla(185, 90%, 60%, 0.08);
+    --active: hsla(185, 90%, 60%, 0.16);
+    --active-2: hsla(185, 90%, 60%, 0.24);
+    --message-hover: hsla(0, 0%, 0%, 0.12);
+
+    /* text, tinted with the teal hue to stay cohesive with the base */
+    --text-1: hsl(175, 15%, 95%);
+    --text-2: hsl(175, 10%, 75%);
+    --text-3: hsl(175, 8%, 62%);
+    --text-4: hsl(175, 8%, 42%);
+    --text-5: hsl(175, 8%, 28%);
+
+    /* neon cyan accent, replacing DIKORD's blue-purple */
+    --accent-1: #9dfcff;
+    --accent-2: #33f6ff;
+    --accent-3: #00e5ff;
+    --accent-4: #00b8cc;
+    --accent-5: #0090a3;
+
+    /* channel name colors */
+    --channels-default: var(--text-4);
+    --channels-hover: #00e5ff;
+    --channels-active: #66f2ff;
+    --channels-icon-hover: #00e5ff;
+}
+
+/* DMs/home button icon: eggplant instead of the default moon.
+   Midnight sets --dms-icon-svg-url on `body`, not `:root`, so the override
+   has to target `body` too or it gets shadowed by body's own declaration. */
+body {
+    --dms-icon-svg-url: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIj48dGV4dCB4PSIyNTYiIHk9IjM5MCIgZm9udC1zaXplPSI0NDAiIHRleHQtYW5jaG9yPSJtaWRkbGUiPvCfjYY8L3RleHQ+PC9zdmc+Cg==');
+}
+
+/* channel names: vertical gradient, white on top fading into the hover cyan */
+[class*="sidebar_"] [class*="link_"]:hover [class*="name_"],
+[class*="sidebar_"] [class*="interactive_"]:hover [class*="name_"] {
+    background: linear-gradient(180deg, #ffffff 0%, var(--channels-hover) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    transition: all 0.15s ease;
+}
+
+/* DM list names: same gradient. The DM row's <li class="channel_ dm_ ...">
+   paints its visible text in a nested .overflowTooltip_ div, not directly on
+   .name_ like channels do, and that div carries its own explicit color that
+   blocks a transparent-color ancestor - so it has to be targeted directly. */
+li[class*="dm_"] [class*="link_"]:hover [class*="name_"] [class*="overflowTooltip_"],
+li[class*="dm_"] [class*="interactive_"]:hover [class*="name_"] [class*="overflowTooltip_"] {
+    background: linear-gradient(180deg, #ffffff 0%, var(--channels-hover) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    transition: all 0.15s ease;
+}
+
+/* emotes inside a channel/DM name: exempt from the gradient/transparent-fill trick above,
+   which otherwise flattens color emoji into solid blobs */
+[class*="sidebar_"] [class*="link_"]:hover [class*="name_"] img,
+[class*="sidebar_"] [class*="interactive_"]:hover [class*="name_"] img,
+[class*="sidebar_"] [class*="name_"] [class*="emoji"],
+li[class*="dm_"] [class*="link_"]:hover [class*="name_"] img,
+li[class*="dm_"] [class*="interactive_"]:hover [class*="name_"] img,
+li[class*="dm_"] [class*="name_"] [class*="emoji"] {
+    -webkit-text-fill-color: initial;
+    color: initial;
+    opacity: 1;
+    filter: none;
+}
+
+/* DM list avatars spin on hover, same as server icons */
+li[class*="dm_"] [class*="link_"] [class*="avatar_"] {
+    transition: transform 0.6s ease;
+}
+li[class*="dm_"] [class*="link_"]:hover [class*="avatar_"] {
+    transform: rotate(360deg);
+}
+
+/* chat message avatars, member list avatars, and the avatar in a user's
+   profile popout/modal all spin on hover too. "user-profile-popout" is a
+   real (non-hashed) class Discord itself adds to the profile card, so it's
+   used directly instead of a wildcard guess. */
+[class*="chat_"] [class*="avatar_"],
+[class*="members_"] [class*="avatar_"],
+[class*="membersWrap_"] [class*="avatar_"],
+.user-profile-popout [class*="avatar_"],
+[class*="userProfileOuter"] [class*="avatar_"],
+[class*="userProfileInner"] [class*="avatar_"] {
+    transition: transform 0.6s ease;
+}
+[class*="chat_"] [class*="avatar_"]:hover,
+[class*="members_"] [class*="avatar_"]:hover,
+[class*="membersWrap_"] [class*="avatar_"]:hover,
+.user-profile-popout [class*="avatar_"]:hover,
+[class*="userProfileOuter"] [class*="avatar_"]:hover,
+[class*="userProfileInner"] [class*="avatar_"]:hover {
+    transform: rotate(360deg);
+}
+
+/* category names: grey -> neon cyan gradient, same as DIKORD */
+[class*="sidebar_"] [class*="title_"] {
+    background: linear-gradient(90deg, var(--text-2) 0%, var(--accent-2) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+}
+
+/* server name: vertical gradient, white on top fading into neon cyan */
+[class*="sidebar_"] [class*="header_"] [class*="name_"] {
+    background: linear-gradient(180deg, #ffffff 0%, var(--accent-2) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+}
+
+/* server icons spin on hover. real guild items are a plain
+   <div class="wrapper__xxxx" data-list-item-id="guildsnav___<id>"> wrapping
+   an <img class="icon__xxxx">, no nested childWrapper like the home button has */
+[class*="wrapper__"][data-list-item-id^="guildsnav___"]:not([data-list-item-id="guildsnav___home"]) [class*="icon__"] {
+    transition: transform 0.6s ease;
+}
+[class*="wrapper__"][data-list-item-id^="guildsnav___"]:not([data-list-item-id="guildsnav___home"]):hover [class*="icon__"] {
+    transform: rotate(360deg);
+}
+
+/* ---------- DIKORD watermark, top-left corner ---------- */
+/* split into two pseudo-elements: gradient-clip transparent fill turns color
+   emoji into flat blobs in Chromium, so the emoji get their own plain-colored layer */
+#app-mount::before {
+    content: "DIKORD";
+    position: fixed;
+    top: 4px;
+    left: 76px;
+    z-index: 9999;
+    font-family: var(--font-display, "gg sans", sans-serif);
+    font-size: 18px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    background: linear-gradient(90deg, var(--text-2) 0%, var(--accent-2) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    opacity: 0.9;
+    pointer-events: none;
+    user-select: none;
+}
+
+#app-mount::after {
+    content: "🍆💦";
+    position: fixed;
+    top: 4px;
+    left: 164px;
+    z-index: 9999;
+    font-size: 16px;
+    opacity: 0.9;
+    pointer-events: none;
+    user-select: none;
+}
