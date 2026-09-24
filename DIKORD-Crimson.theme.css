@@ -204,6 +204,41 @@ li[class*="dm_"] [class*="link_"]:hover [class*="avatar_"] {
     transform: rotate(360deg);
 }
 
+/* ---------- bigger, always-round server icons (DTM's look) ----------
+   plain --guildbar-avatar-size does nothing on its own - Discord renders
+   each guild icon inside an SVG mask (a <foreignObject> hosting the
+   <img>) that clips back down to the original box no matter what size
+   the img itself is. Also, stock Discord only makes the icon a full
+   circle on hover/selected; DTM (DTMSydneyNight3030/2025, via DTM-18)
+   forces it round all the time instead - that's why its add-server and
+   discovery buttons read rounder than stock even when idle. Both fixed
+   the same way DTM-18 does it: resize wrapper + svg + foreignObject
+   together and force a permanent border-radius. Wildcarded instead of
+   hash-pinned so it survives Discord UI updates. Covers real guilds plus
+   the add-server/explore buttons (same guildsnav___ list, just not home). */
+[class*="wrapper__"][data-list-item-id^="guildsnav___"]:not([data-list-item-id="guildsnav___home"]) {
+    width: 56px;
+    height: 56px;
+    border-radius: 50% !important;
+}
+[class*="wrapper__"][data-list-item-id^="guildsnav___"]:not([data-list-item-id="guildsnav___home"]) svg {
+    width: 56px !important;
+    height: 56px !important;
+    border-radius: 50%;
+    overflow: visible;
+}
+[class*="wrapper__"][data-list-item-id^="guildsnav___"]:not([data-list-item-id="guildsnav___home"]) foreignObject {
+    width: 56px !important;
+    height: 56px !important;
+    mask: none !important;
+    overflow: visible;
+}
+[class*="wrapper__"][data-list-item-id^="guildsnav___"]:not([data-list-item-id="guildsnav___home"]) [class*="icon__"] {
+    width: 56px !important;
+    height: 56px !important;
+    border-radius: 50%;
+}
+
 /* ---------- SATANCORD watermark, top-left corner ---------- */
 /* split into two pseudo-elements: gradient-clip transparent fill turns color
    emoji into flat blobs in Chromium, so the emoji get their own plain-colored layer */
