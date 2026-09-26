@@ -203,6 +203,66 @@ li[class*="dm_"] [class*="link_"]:hover [class*="avatar_"] {
     transform: rotate(360deg);
 }
 
+/* server icons: big (56px) + circular, like 2018 Discord.
+   Discord nests every icon: <div.wrapper_ style="width:40px"> > <svg viewBox> >
+   <foreignObject mask="squircle"> > (same again for guilds) > <img>. Instead of
+   fighting the SVG geometry, zoom the outermost 40px wrapper to 56px (x1.4),
+   strip every squircle mask, and leave the icon art unclipped (see --dikord-icon-radius). Column width is set explicitly so nothing is cropped. */
+body {
+    --custom-guild-list-width: 72px;
+}
+/* --dikord-icon-radius: 0 = show the full, uncropped icon art (default);
+   set e.g. 50% for true circles (crops the corners of square icons) */
+[class*="listItem_"] > span > div > [style*="width: 40px"] {
+    zoom: 1.4;
+    overflow: visible;
+    border-radius: var(--dikord-icon-radius, 0);
+}
+[data-list-item-id^="guildsnav___"] [class*="icon_"] {
+    border-radius: var(--dikord-icon-radius, 0);
+}
+[data-list-item-id="guildsnav___home"] [class*="childWrapper"] {
+    border-radius: 50%;
+}
+[class*="listItem_"] foreignObject {
+    mask: none !important;
+    -webkit-mask: none !important;
+}
+[class*="circleIconButton_"] {
+    width: 40px;
+    height: 40px;
+    box-sizing: border-box;
+    border-radius: 50%;
+    background-color: transparent !important;
+    border: 1px dashed currentColor;
+}
+[data-list-id="guildsnav"] [class*="stack_"] {
+    gap: 8px !important;
+}
+/* add-server / discover buttons: neon glow on hover (green = add, purple = discover).
+   Discord's own hover colours made them vanish against the transparent background */
+[data-list-item-id="guildsnav___create-join-button"]:hover,
+[data-list-item-id="guildsnav___create-join-button"]:focus-visible {
+    color: #39ff14 !important;
+    border: 1px solid #39ff14 !important;
+    background-color: rgba(57, 255, 20, 0.12) !important;
+    box-shadow: 0 0 10px #39ff14, inset 0 0 8px rgba(57, 255, 20, 0.5) !important;
+}
+[data-list-item-id="guildsnav___guild-discover-button"]:hover,
+[data-list-item-id="guildsnav___guild-discover-button"]:focus-visible {
+    color: #bf40ff !important;
+    border: 1px solid #bf40ff !important;
+    background-color: rgba(191, 64, 255, 0.12) !important;
+    box-shadow: 0 0 10px #bf40ff, inset 0 0 8px rgba(191, 64, 255, 0.5) !important;
+}
+[class*="circleIconButton_"] {
+    transition: color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+}
+[class*="circleIconButton_"]:hover [class*="circleIcon_"] {
+    color: inherit !important;
+    filter: drop-shadow(0 0 4px currentColor);
+}
+
 /* ---------- SATANCORD watermark, top-left corner ---------- */
 /* split into two pseudo-elements: gradient-clip transparent fill turns color
    emoji into flat blobs in Chromium, so the emoji get their own plain-colored layer */
