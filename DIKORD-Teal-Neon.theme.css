@@ -275,7 +275,6 @@ li[class*="dm_"] [class*="link_"]:hover [class*="avatar_"],
 }
 [class*="wrapper__"][data-list-item-id^="guildsnav___"]:not([data-list-item-id="guildsnav___home"]):hover [class*="icon__"] {
     transform: rotate(360deg) scale(1.04);
-    filter: drop-shadow(0 0 8px var(--neon-glow));
 }
 
 /* ============================================================
@@ -299,7 +298,6 @@ li[class*="dm_"] [class*="link_"]:hover [class*="avatar_"],
     transition: filter 0.25s ease;
 }
 [class*="circleIconButton_"]:hover [class*="circleIcon_"] {
-    filter: drop-shadow(0 0 6px currentColor);
 }
 
 [data-list-item-id="guildsnav___create-join-button"],
@@ -318,7 +316,6 @@ li[class*="dm_"] [class*="link_"]:hover [class*="avatar_"],
 }
 [data-list-item-id="guildsnav___create-join-button"]:hover [class*="circleIcon_"],
 [data-list-item-id="guildsnav___guild-discover-button"]:hover [class*="circleIcon_"] {
-    filter: drop-shadow(0 0 6px var(--accent-1));
 }
 
 /* ============================================================
@@ -414,7 +411,8 @@ text-shadow: none !important;
 [class*="membersWrap_"] [class*="name_"] {
     color: var(--text-2) !important;
     transition: color 0.15s ease;
-}
+text-shadow: none !important;
+    }
 [class*="members_"] [class*="name_"]:hover,
 [class*="membersWrap_"] [class*="name_"]:hover {
     color: var(--hover-1) !important;

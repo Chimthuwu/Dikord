@@ -283,7 +283,6 @@ li[class*="dm_"] [class*="link_"]:hover [class*="avatar_"],
 }
 [class*="wrapper__"][data-list-item-id^="guildsnav___"]:not([data-list-item-id="guildsnav___home"]):hover [class*="icon__"] {
     transform: rotate(360deg) scale(1.04);
-    filter: drop-shadow(0 0 8px var(--neon-glow));
 }
 
 /* ============================================================
@@ -303,7 +302,6 @@ li[class*="dm_"] [class*="link_"]:hover [class*="avatar_"],
 }
 [class*="circleIconButton_"] [class*="circleIcon_"] {
     color: inherit !important;
-    filter: drop-shadow(0 0 4px currentColor);
 }
 
 [data-list-item-id="guildsnav___create-join-button"],
@@ -421,7 +419,8 @@ text-shadow: none !important;
 [class*="membersWrap_"] [class*="name_"] {
     color: var(--text-2) !important;
     transition: color 0.15s ease;
-}
+text-shadow: none !important;
+    }
 [class*="members_"] [class*="name_"]:hover,
 [class*="membersWrap_"] [class*="name_"]:hover {
     color: var(--playful) !important;
